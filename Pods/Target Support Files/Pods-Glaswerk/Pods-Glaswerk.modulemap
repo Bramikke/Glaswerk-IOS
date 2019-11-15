@@ -1,0 +1,6 @@
+framework module Pods_Glaswerk {
+  umbrella header "Pods-Glaswerk-umbrella.h"
+
+  export *
+  module * { export * }
+}

@@ -1,0 +1,457 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 51;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		CEB42B162378326800AA766F /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEB42B152378326800AA766F /* AppDelegate.swift */; };
+		CEB42B182378326800AA766F /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEB42B172378326800AA766F /* SceneDelegate.swift */; };
+		CEB42B1A2378326800AA766F /* DamageViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEB42B192378326800AA766F /* DamageViewController.swift */; };
+		CEB42B1C2378326800AA766F /* OrderViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEB42B1B2378326800AA766F /* OrderViewController.swift */; };
+		CEB42B1F2378326800AA766F /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = CEB42B1D2378326800AA766F /* Main.storyboard */; };
+		CEB42B212378326C00AA766F /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = CEB42B202378326C00AA766F /* Assets.xcassets */; };
+		CEB42B242378326C00AA766F /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = CEB42B222378326C00AA766F /* LaunchScreen.storyboard */; };
+		CEB42B2F2378381E00AA766F /* StudentViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEB42B2E2378381E00AA766F /* StudentViewController.swift */; };
+		CEB42B312378383F00AA766F /* StockViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEB42B302378383F00AA766F /* StockViewController.swift */; };
+		CEB42B4B237C7C8500AA766F /* Item.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEB42B4A237C7C8500AA766F /* Item.swift */; };
+		CEB42B4D237C819A00AA766F /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEB42B4C237C819A00AA766F /* Constants.swift */; };
+		F9CF5418526CB2F52AE38A80 /* Pods_Glaswerk.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5827A1ED51D95313B148A600 /* Pods_Glaswerk.framework */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXFileReference section */
+		5827A1ED51D95313B148A600 /* Pods_Glaswerk.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Glaswerk.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		8B67F0354E2B864B4E6FE9A0 /* Pods-Glaswerk.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Glaswerk.debug.xcconfig"; path = "Target Support Files/Pods-Glaswerk/Pods-Glaswerk.debug.xcconfig"; sourceTree = "<group>"; };
+		996BBA4DEE1137B1107B00F3 /* Pods-Glaswerk.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Glaswerk.release.xcconfig"; path = "Target Support Files/Pods-Glaswerk/Pods-Glaswerk.release.xcconfig"; sourceTree = "<group>"; };
+		CEB42B122378326800AA766F /* Glaswerk.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Glaswerk.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		CEB42B152378326800AA766F /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
+		CEB42B172378326800AA766F /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
+		CEB42B192378326800AA766F /* DamageViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DamageViewController.swift; sourceTree = "<group>"; };
+		CEB42B1B2378326800AA766F /* OrderViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OrderViewController.swift; sourceTree = "<group>"; };
+		CEB42B1E2378326800AA766F /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
+		CEB42B202378326C00AA766F /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		CEB42B232378326C00AA766F /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
+		CEB42B252378326C00AA766F /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		CEB42B2E2378381E00AA766F /* StudentViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StudentViewController.swift; sourceTree = "<group>"; };
+		CEB42B302378383F00AA766F /* StockViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StockViewController.swift; sourceTree = "<group>"; };
+		CEB42B4A237C7C8500AA766F /* Item.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Item.swift; sourceTree = "<group>"; };
+		CEB42B4C237C819A00AA766F /* Constants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		CEB42B0F2378326800AA766F /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				F9CF5418526CB2F52AE38A80 /* Pods_Glaswerk.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		60C4F565DC86D2F9FF2BAAF9 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				5827A1ED51D95313B148A600 /* Pods_Glaswerk.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		A074568851EC65C1EB83A18B /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				8B67F0354E2B864B4E6FE9A0 /* Pods-Glaswerk.debug.xcconfig */,
+				996BBA4DEE1137B1107B00F3 /* Pods-Glaswerk.release.xcconfig */,
+			);
+			path = Pods;
+			sourceTree = "<group>";
+		};
+		CEB42B092378326800AA766F = {
+			isa = PBXGroup;
+			children = (
+				CEB42B142378326800AA766F /* Glaswerk */,
+				CEB42B132378326800AA766F /* Products */,
+				A074568851EC65C1EB83A18B /* Pods */,
+				60C4F565DC86D2F9FF2BAAF9 /* Frameworks */,
+			);
+			sourceTree = "<group>";
+		};
+		CEB42B132378326800AA766F /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				CEB42B122378326800AA766F /* Glaswerk.app */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		CEB42B142378326800AA766F /* Glaswerk */ = {
+			isa = PBXGroup;
+			children = (
+				CEB42B152378326800AA766F /* AppDelegate.swift */,
+				CEB42B172378326800AA766F /* SceneDelegate.swift */,
+				CEB42B2B237835F500AA766F /* Model */,
+				CEB42B2C2378360000AA766F /* View */,
+				CEB42B2D2378360600AA766F /* Controller */,
+				CEB42B202378326C00AA766F /* Assets.xcassets */,
+				CEB42B222378326C00AA766F /* LaunchScreen.storyboard */,
+				CEB42B252378326C00AA766F /* Info.plist */,
+				CEB42B4C237C819A00AA766F /* Constants.swift */,
+			);
+			path = Glaswerk;
+			sourceTree = "<group>";
+		};
+		CEB42B2B237835F500AA766F /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				CEB42B4A237C7C8500AA766F /* Item.swift */,
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
+		CEB42B2C2378360000AA766F /* View */ = {
+			isa = PBXGroup;
+			children = (
+				CEB42B1D2378326800AA766F /* Main.storyboard */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		CEB42B2D2378360600AA766F /* Controller */ = {
+			isa = PBXGroup;
+			children = (
+				CEB42B192378326800AA766F /* DamageViewController.swift */,
+				CEB42B1B2378326800AA766F /* OrderViewController.swift */,
+				CEB42B2E2378381E00AA766F /* StudentViewController.swift */,
+				CEB42B302378383F00AA766F /* StockViewController.swift */,
+			);
+			path = Controller;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		CEB42B112378326800AA766F /* Glaswerk */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = CEB42B282378326C00AA766F /* Build configuration list for PBXNativeTarget "Glaswerk" */;
+			buildPhases = (
+				739C2CB551135E45AFE5863A /* [CP] Check Pods Manifest.lock */,
+				CEB42B0E2378326800AA766F /* Sources */,
+				CEB42B0F2378326800AA766F /* Frameworks */,
+				CEB42B102378326800AA766F /* Resources */,
+				B23B3A2EC5347AECB765A445 /* [CP] Embed Pods Frameworks */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = Glaswerk;
+			productName = Glaswerk;
+			productReference = CEB42B122378326800AA766F /* Glaswerk.app */;
+			productType = "com.apple.product-type.application";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		CEB42B0A2378326800AA766F /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				LastSwiftUpdateCheck = 1120;
+				LastUpgradeCheck = 1120;
+				ORGANIZATIONNAME = "Bram Goedvriend";
+				TargetAttributes = {
+					CEB42B112378326800AA766F = {
+						CreatedOnToolsVersion = 11.2;
+					};
+				};
+			};
+			buildConfigurationList = CEB42B0D2378326800AA766F /* Build configuration list for PBXProject "Glaswerk" */;
+			compatibilityVersion = "Xcode 9.3";
+			developmentRegion = en;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = CEB42B092378326800AA766F;
+			productRefGroup = CEB42B132378326800AA766F /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				CEB42B112378326800AA766F /* Glaswerk */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		CEB42B102378326800AA766F /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				CEB42B242378326C00AA766F /* LaunchScreen.storyboard in Resources */,
+				CEB42B212378326C00AA766F /* Assets.xcassets in Resources */,
+				CEB42B1F2378326800AA766F /* Main.storyboard in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		739C2CB551135E45AFE5863A /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-Glaswerk-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+		B23B3A2EC5347AECB765A445 /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-Glaswerk/Pods-Glaswerk-frameworks-${CONFIGURATION}-input-files.xcfilelist",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-Glaswerk/Pods-Glaswerk-frameworks-${CONFIGURATION}-output-files.xcfilelist",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-Glaswerk/Pods-Glaswerk-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		CEB42B0E2378326800AA766F /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				CEB42B2F2378381E00AA766F /* StudentViewController.swift in Sources */,
+				CEB42B312378383F00AA766F /* StockViewController.swift in Sources */,
+				CEB42B1C2378326800AA766F /* OrderViewController.swift in Sources */,
+				CEB42B1A2378326800AA766F /* DamageViewController.swift in Sources */,
+				CEB42B4B237C7C8500AA766F /* Item.swift in Sources */,
+				CEB42B162378326800AA766F /* AppDelegate.swift in Sources */,
+				CEB42B182378326800AA766F /* SceneDelegate.swift in Sources */,
+				CEB42B4D237C819A00AA766F /* Constants.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXVariantGroup section */
+		CEB42B1D2378326800AA766F /* Main.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				CEB42B1E2378326800AA766F /* Base */,
+			);
+			name = Main.storyboard;
+			sourceTree = "<group>";
+		};
+		CEB42B222378326C00AA766F /* LaunchScreen.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				CEB42B232378326C00AA766F /* Base */,
+			);
+			name = LaunchScreen.storyboard;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
+/* Begin XCBuildConfiguration section */
+		CEB42B262378326C00AA766F /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 13.2;
+				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
+				MTL_FAST_MATH = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = iphoneos;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = DEBUG;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+			};
+			name = Debug;
+		};
+		CEB42B272378326C00AA766F /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 13.2;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				MTL_FAST_MATH = YES;
+				SDKROOT = iphoneos;
+				SWIFT_COMPILATION_MODE = wholemodule;
+				SWIFT_OPTIMIZATION_LEVEL = "-O";
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		CEB42B292378326C00AA766F /* Debug */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 8B67F0354E2B864B4E6FE9A0 /* Pods-Glaswerk.debug.xcconfig */;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = JQ78JN8PA8;
+				INFOPLIST_FILE = Glaswerk/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = com.bramgoedvriend.Glaswerk;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Debug;
+		};
+		CEB42B2A2378326C00AA766F /* Release */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 996BBA4DEE1137B1107B00F3 /* Pods-Glaswerk.release.xcconfig */;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = JQ78JN8PA8;
+				INFOPLIST_FILE = Glaswerk/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = com.bramgoedvriend.Glaswerk;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		CEB42B0D2378326800AA766F /* Build configuration list for PBXProject "Glaswerk" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				CEB42B262378326C00AA766F /* Debug */,
+				CEB42B272378326C00AA766F /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		CEB42B282378326C00AA766F /* Build configuration list for PBXNativeTarget "Glaswerk" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				CEB42B292378326C00AA766F /* Debug */,
+				CEB42B2A2378326C00AA766F /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = CEB42B0A2378326800AA766F /* Project object */;
+}

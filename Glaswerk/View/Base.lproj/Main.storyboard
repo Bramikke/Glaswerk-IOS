@@ -1,0 +1,184 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="15505" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="49e-Tb-3d3">
+    <device id="retina6_1" orientation="portrait" appearance="light"/>
+    <dependencies>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="15510"/>
+        <capability name="Named colors" minToolsVersion="9.0"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <scenes>
+        <!--Damage-->
+        <scene sceneID="hNz-n2-bh7">
+            <objects>
+                <viewController id="9pv-A4-QxB" customClass="DamageViewController" customModule="Glaswerk" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="tsR-hK-woN">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="t2a-Lj-fLt">
+                                <rect key="frame" x="0.0" y="44" width="414" height="769"/>
+                                <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                                <prototypes>
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="cell" id="vpe-gF-kxI">
+                                        <rect key="frame" x="0.0" y="28" width="414" height="43.5"/>
+                                        <autoresizingMask key="autoresizingMask"/>
+                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="vpe-gF-kxI" id="v5K-LI-ZSg">
+                                            <rect key="frame" x="0.0" y="0.0" width="414" height="43.5"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                        </tableViewCellContentView>
+                                    </tableViewCell>
+                                </prototypes>
+                            </tableView>
+                        </subviews>
+                        <color key="backgroundColor" name="LightBlueTint"/>
+                        <constraints>
+                            <constraint firstItem="t2a-Lj-fLt" firstAttribute="leading" secondItem="PQr-Ze-W5v" secondAttribute="leading" id="0sl-W2-ytd"/>
+                            <constraint firstItem="PQr-Ze-W5v" firstAttribute="trailing" secondItem="t2a-Lj-fLt" secondAttribute="trailing" id="LMJ-hi-seM"/>
+                            <constraint firstItem="t2a-Lj-fLt" firstAttribute="top" secondItem="PQr-Ze-W5v" secondAttribute="top" id="aD3-7u-Wdc"/>
+                            <constraint firstItem="PQr-Ze-W5v" firstAttribute="bottom" secondItem="t2a-Lj-fLt" secondAttribute="bottom" id="cwm-Ul-bY4"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="PQr-Ze-W5v"/>
+                    </view>
+                    <tabBarItem key="tabBarItem" title="Damage" image="damage" id="acW-dT-cKf"/>
+                    <connections>
+                        <outlet property="tableView" destination="t2a-Lj-fLt" id="Jgh-67-Bh4"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="W5J-7L-Pyd" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="773.91304347826087" y="-416.51785714285711"/>
+        </scene>
+        <!--Orders-->
+        <scene sceneID="wg7-f3-ORb">
+            <objects>
+                <viewController id="8rJ-Kc-sve" customClass="OrderViewController" customModule="Glaswerk" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="QS5-Rx-YEW">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleToFill" text="Orders" textAlignment="center" lineBreakMode="tailTruncation" minimumFontSize="10" translatesAutoresizingMaskIntoConstraints="NO" id="zEq-FU-wV5">
+                                <rect key="frame" x="154.5" y="426.5" width="105.5" height="43"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="36"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Loaded by OrderViewController" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="NDk-cv-Gan">
+                                <rect key="frame" x="105.5" y="477.5" width="203.5" height="17"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                        </subviews>
+                        <color key="backgroundColor" name="LightBlueTint"/>
+                        <constraints>
+                            <constraint firstItem="NDk-cv-Gan" firstAttribute="top" secondItem="zEq-FU-wV5" secondAttribute="bottom" constant="8" symbolic="YES" id="Day-4N-Vmt"/>
+                            <constraint firstItem="NDk-cv-Gan" firstAttribute="centerX" secondItem="zEq-FU-wV5" secondAttribute="centerX" id="JgO-Fn-dHn"/>
+                            <constraint firstAttribute="centerX" secondItem="zEq-FU-wV5" secondAttribute="centerX" id="qqM-NS-xev"/>
+                            <constraint firstAttribute="centerY" secondItem="zEq-FU-wV5" secondAttribute="centerY" id="qzY-Ky-pLD"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="O1u-W8-tvY"/>
+                    </view>
+                    <tabBarItem key="tabBarItem" title="Orders" image="orders" id="cPa-gy-q4n"/>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="4Nw-L8-lE0" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="775" y="387"/>
+        </scene>
+        <!--Tab Bar Controller-->
+        <scene sceneID="yl2-sM-qoP">
+            <objects>
+                <tabBarController id="49e-Tb-3d3" sceneMemberID="viewController">
+                    <tabBar key="tabBar" contentMode="scaleToFill" id="W28-zg-YXA">
+                        <rect key="frame" x="0.0" y="975" width="768" height="49"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMinY="YES"/>
+                        <color key="backgroundColor" red="0.0" green="0.0" blue="0.0" alpha="0.0" colorSpace="custom" customColorSpace="sRGB"/>
+                    </tabBar>
+                    <connections>
+                        <segue destination="9pv-A4-QxB" kind="relationship" relationship="viewControllers" id="Way-Ui-MCD"/>
+                        <segue destination="8rJ-Kc-sve" kind="relationship" relationship="viewControllers" id="pyc-iG-RbS"/>
+                        <segue destination="ruU-hf-Gn4" kind="relationship" relationship="viewControllers" id="hOn-ti-kyB"/>
+                        <segue destination="ZXB-O9-pbV" kind="relationship" relationship="viewControllers" id="YdM-eW-Gxu"/>
+                    </connections>
+                </tabBarController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="HuB-VB-40B" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="0.0" y="0.0"/>
+        </scene>
+        <!--Stock-->
+        <scene sceneID="CFu-D3-8LC">
+            <objects>
+                <viewController id="ruU-hf-Gn4" customClass="StockViewController" customModule="Glaswerk" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="fki-It-LQ2">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleToFill" text="Stock" textAlignment="center" lineBreakMode="tailTruncation" minimumFontSize="10" translatesAutoresizingMaskIntoConstraints="NO" id="xvc-1t-Yq7">
+                                <rect key="frame" x="163" y="426.5" width="88.5" height="43"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="36"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Loaded by StockViewController" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="qEN-xG-NXn">
+                                <rect key="frame" x="105.5" y="477.5" width="203" height="17"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                        </subviews>
+                        <color key="backgroundColor" name="LightBlueTint"/>
+                        <constraints>
+                            <constraint firstAttribute="centerX" secondItem="xvc-1t-Yq7" secondAttribute="centerX" id="DeJ-iY-BYR"/>
+                            <constraint firstAttribute="centerY" secondItem="xvc-1t-Yq7" secondAttribute="centerY" id="IVp-PZ-G5z"/>
+                            <constraint firstItem="qEN-xG-NXn" firstAttribute="centerX" secondItem="xvc-1t-Yq7" secondAttribute="centerX" id="bZe-38-lYh"/>
+                            <constraint firstItem="qEN-xG-NXn" firstAttribute="top" secondItem="xvc-1t-Yq7" secondAttribute="bottom" constant="8" symbolic="YES" id="pyR-7U-ZyV"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="Cw7-Nz-9Va"/>
+                    </view>
+                    <tabBarItem key="tabBarItem" title="Stock" image="stock" id="XlG-ET-LDe"/>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="Ofi-42-BWK" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-794" y="-417"/>
+        </scene>
+        <!--Students-->
+        <scene sceneID="6K9-Gf-d2f">
+            <objects>
+                <viewController id="ZXB-O9-pbV" customClass="StudentViewController" customModule="Glaswerk" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="pFd-OS-0ub">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleToFill" text="Students" textAlignment="center" lineBreakMode="tailTruncation" minimumFontSize="10" translatesAutoresizingMaskIntoConstraints="NO" id="iMm-O7-ONH">
+                                <rect key="frame" x="137.5" y="426.5" width="139.5" height="43"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="36"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Loaded by StudentsViewController" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="1fs-gc-D1F">
+                                <rect key="frame" x="95.5" y="477.5" width="223.5" height="17"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                        </subviews>
+                        <color key="backgroundColor" name="LightBlueTint"/>
+                        <constraints>
+                            <constraint firstAttribute="centerY" secondItem="iMm-O7-ONH" secondAttribute="centerY" id="S8T-6w-Kag"/>
+                            <constraint firstItem="1fs-gc-D1F" firstAttribute="top" secondItem="iMm-O7-ONH" secondAttribute="bottom" constant="8" symbolic="YES" id="hCb-si-xPv"/>
+                            <constraint firstAttribute="centerX" secondItem="iMm-O7-ONH" secondAttribute="centerX" id="n0y-TB-BFw"/>
+                            <constraint firstItem="1fs-gc-D1F" firstAttribute="centerX" secondItem="iMm-O7-ONH" secondAttribute="centerX" id="tuo-qQ-1yp"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="fQg-sz-rm8"/>
+                    </view>
+                    <tabBarItem key="tabBarItem" title="Students" image="student" id="CFv-EC-gfc"/>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="laq-SP-QNx" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-794" y="386"/>
+        </scene>
+    </scenes>
+    <resources>
+        <image name="damage" width="16.5" height="16.5"/>
+        <image name="orders" width="16.5" height="16.5"/>
+        <image name="stock" width="16.5" height="16.5"/>
+        <image name="student" width="16.5" height="16.5"/>
+        <namedColor name="LightBlueTint">
+            <color red="0.92000001668930054" green="0.98000001907348633" blue="0.99699997901916504" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </namedColor>
+    </resources>
+</document>
