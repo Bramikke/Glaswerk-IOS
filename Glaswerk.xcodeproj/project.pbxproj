@@ -7,6 +7,21 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		CE4ADE95237EAE7F001B091B /* GlaswerkManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE4ADE94237EAE7F001B091B /* GlaswerkManager.swift */; };
+		CE4ADE9C237ED175001B091B /* ItemCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE4ADE9A237ED175001B091B /* ItemCell.swift */; };
+		CE4ADE9D237ED175001B091B /* ItemCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = CE4ADE9B237ED175001B091B /* ItemCell.xib */; };
+		CE4ADE9F237EEA49001B091B /* Klas.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE4ADE9E237EEA49001B091B /* Klas.swift */; };
+		CE4ADEA1237EEA51001B091B /* Lokaal.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE4ADEA0237EEA51001B091B /* Lokaal.swift */; };
+		CE4ADEA3237EECD4001B091B /* ItemRepository.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE4ADEA2237EECD4001B091B /* ItemRepository.swift */; };
+		CE4ADEA5237EED07001B091B /* LokaalRepository.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE4ADEA4237EED07001B091B /* LokaalRepository.swift */; };
+		CE4ADEA7237EED4B001B091B /* KlasRepository.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE4ADEA6237EED4B001B091B /* KlasRepository.swift */; };
+		CE4ADEAB237F21C3001B091B /* DamageLeerlingViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE4ADEAA237F21C3001B091B /* DamageLeerlingViewController.swift */; };
+		CE4ADEAD237F2DEF001B091B /* LeerlingRepository.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE4ADEAC237F2DEF001B091B /* LeerlingRepository.swift */; };
+		CE4ADEAF237F2E14001B091B /* Leerling.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE4ADEAE237F2E14001B091B /* Leerling.swift */; };
+		CE4ADEB1237F3A31001B091B /* LeerlingItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE4ADEB0237F3A31001B091B /* LeerlingItem.swift */; };
+		CE4ADEB3237F3A90001B091B /* LeerlingItemRepository.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE4ADEB2237F3A90001B091B /* LeerlingItemRepository.swift */; };
+		CE4ADEB6237F4E4C001B091B /* OrderCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE4ADEB4237F4E4C001B091B /* OrderCell.swift */; };
+		CE4ADEB7237F4E4C001B091B /* OrderCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = CE4ADEB5237F4E4C001B091B /* OrderCell.xib */; };
 		CEB42B162378326800AA766F /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEB42B152378326800AA766F /* AppDelegate.swift */; };
 		CEB42B182378326800AA766F /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEB42B172378326800AA766F /* SceneDelegate.swift */; };
 		CEB42B1A2378326800AA766F /* DamageViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEB42B192378326800AA766F /* DamageViewController.swift */; };
@@ -25,6 +40,21 @@
 		5827A1ED51D95313B148A600 /* Pods_Glaswerk.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Glaswerk.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		8B67F0354E2B864B4E6FE9A0 /* Pods-Glaswerk.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Glaswerk.debug.xcconfig"; path = "Target Support Files/Pods-Glaswerk/Pods-Glaswerk.debug.xcconfig"; sourceTree = "<group>"; };
 		996BBA4DEE1137B1107B00F3 /* Pods-Glaswerk.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Glaswerk.release.xcconfig"; path = "Target Support Files/Pods-Glaswerk/Pods-Glaswerk.release.xcconfig"; sourceTree = "<group>"; };
+		CE4ADE94237EAE7F001B091B /* GlaswerkManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GlaswerkManager.swift; sourceTree = "<group>"; };
+		CE4ADE9A237ED175001B091B /* ItemCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ItemCell.swift; sourceTree = "<group>"; };
+		CE4ADE9B237ED175001B091B /* ItemCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ItemCell.xib; sourceTree = "<group>"; };
+		CE4ADE9E237EEA49001B091B /* Klas.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Klas.swift; sourceTree = "<group>"; };
+		CE4ADEA0237EEA51001B091B /* Lokaal.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Lokaal.swift; sourceTree = "<group>"; };
+		CE4ADEA2237EECD4001B091B /* ItemRepository.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ItemRepository.swift; sourceTree = "<group>"; };
+		CE4ADEA4237EED07001B091B /* LokaalRepository.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LokaalRepository.swift; sourceTree = "<group>"; };
+		CE4ADEA6237EED4B001B091B /* KlasRepository.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = KlasRepository.swift; sourceTree = "<group>"; };
+		CE4ADEAA237F21C3001B091B /* DamageLeerlingViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DamageLeerlingViewController.swift; sourceTree = "<group>"; };
+		CE4ADEAC237F2DEF001B091B /* LeerlingRepository.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LeerlingRepository.swift; sourceTree = "<group>"; };
+		CE4ADEAE237F2E14001B091B /* Leerling.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Leerling.swift; sourceTree = "<group>"; };
+		CE4ADEB0237F3A31001B091B /* LeerlingItem.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LeerlingItem.swift; sourceTree = "<group>"; };
+		CE4ADEB2237F3A90001B091B /* LeerlingItemRepository.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LeerlingItemRepository.swift; sourceTree = "<group>"; };
+		CE4ADEB4237F4E4C001B091B /* OrderCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OrderCell.swift; sourceTree = "<group>"; };
+		CE4ADEB5237F4E4C001B091B /* OrderCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = OrderCell.xib; sourceTree = "<group>"; };
 		CEB42B122378326800AA766F /* Glaswerk.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Glaswerk.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		CEB42B152378326800AA766F /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		CEB42B172378326800AA766F /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -69,6 +99,31 @@
 			path = Pods;
 			sourceTree = "<group>";
 		};
+		CE4ADE98237EB662001B091B /* Domain */ = {
+			isa = PBXGroup;
+			children = (
+				CEB42B4A237C7C8500AA766F /* Item.swift */,
+				CE4ADE9E237EEA49001B091B /* Klas.swift */,
+				CE4ADEA0237EEA51001B091B /* Lokaal.swift */,
+				CE4ADEAE237F2E14001B091B /* Leerling.swift */,
+				CE4ADEB0237F3A31001B091B /* LeerlingItem.swift */,
+			);
+			path = Domain;
+			sourceTree = "<group>";
+		};
+		CE4ADE99237EB66A001B091B /* Database */ = {
+			isa = PBXGroup;
+			children = (
+				CE4ADE94237EAE7F001B091B /* GlaswerkManager.swift */,
+				CE4ADEA2237EECD4001B091B /* ItemRepository.swift */,
+				CE4ADEA4237EED07001B091B /* LokaalRepository.swift */,
+				CE4ADEA6237EED4B001B091B /* KlasRepository.swift */,
+				CE4ADEAC237F2DEF001B091B /* LeerlingRepository.swift */,
+				CE4ADEB2237F3A90001B091B /* LeerlingItemRepository.swift */,
+			);
+			path = Database;
+			sourceTree = "<group>";
+		};
 		CEB42B092378326800AA766F = {
 			isa = PBXGroup;
 			children = (
@@ -106,7 +161,8 @@
 		CEB42B2B237835F500AA766F /* Model */ = {
 			isa = PBXGroup;
 			children = (
-				CEB42B4A237C7C8500AA766F /* Item.swift */,
+				CE4ADE98237EB662001B091B /* Domain */,
+				CE4ADE99237EB66A001B091B /* Database */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -115,6 +171,10 @@
 			isa = PBXGroup;
 			children = (
 				CEB42B1D2378326800AA766F /* Main.storyboard */,
+				CE4ADE9A237ED175001B091B /* ItemCell.swift */,
+				CE4ADE9B237ED175001B091B /* ItemCell.xib */,
+				CE4ADEB4237F4E4C001B091B /* OrderCell.swift */,
+				CE4ADEB5237F4E4C001B091B /* OrderCell.xib */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -123,6 +183,7 @@
 			isa = PBXGroup;
 			children = (
 				CEB42B192378326800AA766F /* DamageViewController.swift */,
+				CE4ADEAA237F21C3001B091B /* DamageLeerlingViewController.swift */,
 				CEB42B1B2378326800AA766F /* OrderViewController.swift */,
 				CEB42B2E2378381E00AA766F /* StudentViewController.swift */,
 				CEB42B302378383F00AA766F /* StockViewController.swift */,
@@ -190,6 +251,8 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				CE4ADEB7237F4E4C001B091B /* OrderCell.xib in Resources */,
+				CE4ADE9D237ED175001B091B /* ItemCell.xib in Resources */,
 				CEB42B242378326C00AA766F /* LaunchScreen.storyboard in Resources */,
 				CEB42B212378326C00AA766F /* Assets.xcassets in Resources */,
 				CEB42B1F2378326800AA766F /* Main.storyboard in Resources */,
@@ -246,13 +309,26 @@
 			buildActionMask = 2147483647;
 			files = (
 				CEB42B2F2378381E00AA766F /* StudentViewController.swift in Sources */,
+				CE4ADEAB237F21C3001B091B /* DamageLeerlingViewController.swift in Sources */,
 				CEB42B312378383F00AA766F /* StockViewController.swift in Sources */,
+				CE4ADEAF237F2E14001B091B /* Leerling.swift in Sources */,
 				CEB42B1C2378326800AA766F /* OrderViewController.swift in Sources */,
+				CE4ADEA3237EECD4001B091B /* ItemRepository.swift in Sources */,
+				CE4ADEA1237EEA51001B091B /* Lokaal.swift in Sources */,
 				CEB42B1A2378326800AA766F /* DamageViewController.swift in Sources */,
+				CE4ADE9C237ED175001B091B /* ItemCell.swift in Sources */,
+				CE4ADEB1237F3A31001B091B /* LeerlingItem.swift in Sources */,
+				CE4ADEA7237EED4B001B091B /* KlasRepository.swift in Sources */,
+				CE4ADE9F237EEA49001B091B /* Klas.swift in Sources */,
 				CEB42B4B237C7C8500AA766F /* Item.swift in Sources */,
 				CEB42B162378326800AA766F /* AppDelegate.swift in Sources */,
 				CEB42B182378326800AA766F /* SceneDelegate.swift in Sources */,
+				CE4ADE95237EAE7F001B091B /* GlaswerkManager.swift in Sources */,
+				CE4ADEB6237F4E4C001B091B /* OrderCell.swift in Sources */,
+				CE4ADEB3237F3A90001B091B /* LeerlingItemRepository.swift in Sources */,
 				CEB42B4D237C819A00AA766F /* Constants.swift in Sources */,
+				CE4ADEA5237EED07001B091B /* LokaalRepository.swift in Sources */,
+				CE4ADEAD237F2DEF001B091B /* LeerlingRepository.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -400,6 +476,7 @@
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = JQ78JN8PA8;
 				INFOPLIST_FILE = Glaswerk/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 13.1;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -419,6 +496,7 @@
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = JQ78JN8PA8;
 				INFOPLIST_FILE = Glaswerk/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 13.1;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",

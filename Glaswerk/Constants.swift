@@ -9,7 +9,23 @@
 import Foundation
 
 struct K {
+    
+    static let lokaal = "Lokaal: "
+    static let klas = "Klas: "
+    
+    struct defaultKeys {
+        static let klasid = "klasid"
+        static let lokaalid = "lokaalid"
+    }
+    
     struct damage {
-        static let cellIdentifier = "cell"
+        static let cellIdentifier = "itemCell"
+        static let cellNibName = "ItemCell"
+        static let cellToLeerling = "CellToLeerling"
+    }
+    
+    struct order {
+        static let cellIdentifier = "orderCell"
+        static let cellNibName = "OrderCell"
     }
 }

@@ -4,6 +4,6 @@ target 'Glaswerk' do
   use_frameworks!
 
   # Pods for Glaswerk
-    pod 'CLTypingLabel'
+    pod 'RestEssentials'
 
 end

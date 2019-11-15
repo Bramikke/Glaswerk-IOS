@@ -1,16 +1,16 @@
 PODS:
-  - CLTypingLabel (0.4.0)
+  - RestEssentials (5.0.1)
 
 DEPENDENCIES:
-  - CLTypingLabel
+  - RestEssentials
 
 SPEC REPOS:
   trunk:
-    - CLTypingLabel
+    - RestEssentials
 
 SPEC CHECKSUMS:
-  CLTypingLabel: 95a7d1faf7e3d1d952cd11cb0491d17d80c50934
+  RestEssentials: c1f734682b42f178040752e55111fd4f13f96624
 
-PODFILE CHECKSUM: 642081bcf671698f9ab64ab97fca5fff9c2e7603
+PODFILE CHECKSUM: 6e835daf7f96045301d113b2e92b76de5e070c2c
 
 COCOAPODS: 1.8.4

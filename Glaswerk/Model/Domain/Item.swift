@@ -8,7 +8,11 @@
 
 import Foundation
 
-struct Item {
+struct ItemData: Codable {
+    let items: [Item]
+}
+
+struct Item: Codable {
     let itemid: Int
     let lokaal_id: Int
     let naam: String
@@ -16,4 +20,6 @@ struct Item {
     let min_aantal: Int
     let max_aantal: Int
     let bestel_hoeveelheid: Int
+    let lokaalid: Int?
+    let lokaal_naam: String?
 }

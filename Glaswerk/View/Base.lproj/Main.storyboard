@@ -8,7 +8,7 @@
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
-        <!--Damage-->
+        <!--Damage View Controller-->
         <scene sceneID="hNz-n2-bh7">
             <objects>
                 <viewController id="9pv-A4-QxB" customClass="DamageViewController" customModule="Glaswerk" customModuleProvider="target" sceneMemberID="viewController">
@@ -16,40 +16,61 @@
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="t2a-Lj-fLt">
-                                <rect key="frame" x="0.0" y="44" width="414" height="769"/>
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="none" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="t2a-Lj-fLt">
+                                <rect key="frame" x="0.0" y="88" width="414" height="725"/>
                                 <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
-                                <prototypes>
-                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="cell" id="vpe-gF-kxI">
-                                        <rect key="frame" x="0.0" y="28" width="414" height="43.5"/>
-                                        <autoresizingMask key="autoresizingMask"/>
-                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="vpe-gF-kxI" id="v5K-LI-ZSg">
-                                            <rect key="frame" x="0.0" y="0.0" width="414" height="43.5"/>
-                                            <autoresizingMask key="autoresizingMask"/>
-                                        </tableViewCellContentView>
-                                    </tableViewCell>
-                                </prototypes>
+                                <sections/>
                             </tableView>
                         </subviews>
-                        <color key="backgroundColor" name="LightBlueTint"/>
+                        <color key="backgroundColor" name="BlueTint"/>
                         <constraints>
-                            <constraint firstItem="t2a-Lj-fLt" firstAttribute="leading" secondItem="PQr-Ze-W5v" secondAttribute="leading" id="0sl-W2-ytd"/>
-                            <constraint firstItem="PQr-Ze-W5v" firstAttribute="trailing" secondItem="t2a-Lj-fLt" secondAttribute="trailing" id="LMJ-hi-seM"/>
-                            <constraint firstItem="t2a-Lj-fLt" firstAttribute="top" secondItem="PQr-Ze-W5v" secondAttribute="top" id="aD3-7u-Wdc"/>
-                            <constraint firstItem="PQr-Ze-W5v" firstAttribute="bottom" secondItem="t2a-Lj-fLt" secondAttribute="bottom" id="cwm-Ul-bY4"/>
+                            <constraint firstItem="t2a-Lj-fLt" firstAttribute="top" secondItem="PQr-Ze-W5v" secondAttribute="top" id="5B8-y1-geG"/>
+                            <constraint firstItem="t2a-Lj-fLt" firstAttribute="trailing" secondItem="PQr-Ze-W5v" secondAttribute="trailing" id="ibk-rR-uQ0"/>
+                            <constraint firstItem="PQr-Ze-W5v" firstAttribute="bottom" secondItem="t2a-Lj-fLt" secondAttribute="bottom" id="v5c-xX-vk3"/>
+                            <constraint firstItem="t2a-Lj-fLt" firstAttribute="leading" secondItem="PQr-Ze-W5v" secondAttribute="leading" id="wS1-Se-08h"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="PQr-Ze-W5v"/>
                     </view>
-                    <tabBarItem key="tabBarItem" title="Damage" image="damage" id="acW-dT-cKf"/>
+                    <navigationItem key="navigationItem" id="LsB-Ad-qKN">
+                        <barButtonItem key="leftBarButtonItem" id="gkF-3Y-a6p">
+                            <button key="customView" opaque="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="1" verticalHuggingPriority="1" horizontalCompressionResistancePriority="1000" verticalCompressionResistancePriority="1000" layoutMarginsFollowReadableWidth="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" id="scY-bo-AVC">
+                                <rect key="frame" x="20" y="5.5" width="59" height="33"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <state key="normal" title="Lokaal: ">
+                                    <color key="titleColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                </state>
+                                <connections>
+                                    <action selector="lokaalClick:" destination="9pv-A4-QxB" eventType="touchUpInside" id="th2-1K-WHq"/>
+                                </connections>
+                            </button>
+                        </barButtonItem>
+                        <barButtonItem key="rightBarButtonItem" id="Wm6-eA-dRA">
+                            <button key="customView" opaque="NO" contentMode="scaleToFill" horizontalCompressionResistancePriority="751" contentHorizontalAlignment="left" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" id="lzq-aI-qcs">
+                                <rect key="frame" x="352" y="5.5" width="42" height="33"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <state key="normal" title="Klas: ">
+                                    <color key="titleColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                </state>
+                                <connections>
+                                    <action selector="klasClick:" destination="9pv-A4-QxB" eventType="touchUpInside" id="YGE-zM-yNY"/>
+                                </connections>
+                            </button>
+                        </barButtonItem>
+                    </navigationItem>
                     <connections>
+                        <outlet property="klasButton" destination="lzq-aI-qcs" id="Q5A-97-w7R"/>
+                        <outlet property="lokaalButton" destination="scY-bo-AVC" id="rwf-zU-jXU"/>
                         <outlet property="tableView" destination="t2a-Lj-fLt" id="Jgh-67-Bh4"/>
+                        <segue destination="iF9-q0-xXW" kind="show" identifier="CellToLeerling" id="aLh-Kl-udK"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="W5J-7L-Pyd" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="773.91304347826087" y="-416.51785714285711"/>
+            <point key="canvasLocation" x="1603" y="-337"/>
         </scene>
-        <!--Orders-->
+        <!--Bestellingen-->
         <scene sceneID="wg7-f3-ORb">
             <objects>
                 <viewController id="8rJ-Kc-sve" customClass="OrderViewController" customModule="Glaswerk" customModuleProvider="target" sceneMemberID="viewController">
@@ -57,31 +78,28 @@
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleToFill" text="Orders" textAlignment="center" lineBreakMode="tailTruncation" minimumFontSize="10" translatesAutoresizingMaskIntoConstraints="NO" id="zEq-FU-wV5">
-                                <rect key="frame" x="154.5" y="426.5" width="105.5" height="43"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="36"/>
-                                <nil key="highlightedColor"/>
-                            </label>
-                            <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Loaded by OrderViewController" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="NDk-cv-Gan">
-                                <rect key="frame" x="105.5" y="477.5" width="203.5" height="17"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                <nil key="highlightedColor"/>
-                            </label>
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="Hks-Te-Wln">
+                                <rect key="frame" x="0.0" y="44" width="414" height="769"/>
+                                <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                            </tableView>
                         </subviews>
                         <color key="backgroundColor" name="LightBlueTint"/>
                         <constraints>
-                            <constraint firstItem="NDk-cv-Gan" firstAttribute="top" secondItem="zEq-FU-wV5" secondAttribute="bottom" constant="8" symbolic="YES" id="Day-4N-Vmt"/>
-                            <constraint firstItem="NDk-cv-Gan" firstAttribute="centerX" secondItem="zEq-FU-wV5" secondAttribute="centerX" id="JgO-Fn-dHn"/>
-                            <constraint firstAttribute="centerX" secondItem="zEq-FU-wV5" secondAttribute="centerX" id="qqM-NS-xev"/>
-                            <constraint firstAttribute="centerY" secondItem="zEq-FU-wV5" secondAttribute="centerY" id="qzY-Ky-pLD"/>
+                            <constraint firstItem="O1u-W8-tvY" firstAttribute="bottom" secondItem="Hks-Te-Wln" secondAttribute="bottom" id="GyS-P9-WpY"/>
+                            <constraint firstItem="Hks-Te-Wln" firstAttribute="leading" secondItem="O1u-W8-tvY" secondAttribute="leading" id="Ydm-7f-i1e"/>
+                            <constraint firstItem="O1u-W8-tvY" firstAttribute="trailing" secondItem="Hks-Te-Wln" secondAttribute="trailing" id="m8s-h7-NrR"/>
+                            <constraint firstItem="Hks-Te-Wln" firstAttribute="top" secondItem="O1u-W8-tvY" secondAttribute="top" id="uUx-rS-zR5"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="O1u-W8-tvY"/>
                     </view>
-                    <tabBarItem key="tabBarItem" title="Orders" image="orders" id="cPa-gy-q4n"/>
+                    <tabBarItem key="tabBarItem" title="Bestellingen" image="orders" id="cPa-gy-q4n"/>
+                    <connections>
+                        <outlet property="tableView" destination="Hks-Te-Wln" id="Nnh-yB-ANM"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="4Nw-L8-lE0" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="775" y="387"/>
+            <point key="canvasLocation" x="774" y="400"/>
         </scene>
         <!--Tab Bar Controller-->
         <scene sceneID="yl2-sM-qoP">
@@ -91,9 +109,10 @@
                         <rect key="frame" x="0.0" y="975" width="768" height="49"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMinY="YES"/>
                         <color key="backgroundColor" red="0.0" green="0.0" blue="0.0" alpha="0.0" colorSpace="custom" customColorSpace="sRGB"/>
+                        <color key="barTintColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                     </tabBar>
                     <connections>
-                        <segue destination="9pv-A4-QxB" kind="relationship" relationship="viewControllers" id="Way-Ui-MCD"/>
+                        <segue destination="V5i-3u-pQr" kind="relationship" relationship="viewControllers" id="Way-Ui-MCD"/>
                         <segue destination="8rJ-Kc-sve" kind="relationship" relationship="viewControllers" id="pyc-iG-RbS"/>
                         <segue destination="ruU-hf-Gn4" kind="relationship" relationship="viewControllers" id="hOn-ti-kyB"/>
                         <segue destination="ZXB-O9-pbV" kind="relationship" relationship="viewControllers" id="YdM-eW-Gxu"/>
@@ -103,7 +122,7 @@
             </objects>
             <point key="canvasLocation" x="0.0" y="0.0"/>
         </scene>
-        <!--Stock-->
+        <!--Voorraad-->
         <scene sceneID="CFu-D3-8LC">
             <objects>
                 <viewController id="ruU-hf-Gn4" customClass="StockViewController" customModule="Glaswerk" customModuleProvider="target" sceneMemberID="viewController">
@@ -131,13 +150,13 @@
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="Cw7-Nz-9Va"/>
                     </view>
-                    <tabBarItem key="tabBarItem" title="Stock" image="stock" id="XlG-ET-LDe"/>
+                    <tabBarItem key="tabBarItem" title="Voorraad" image="stock" id="XlG-ET-LDe"/>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Ofi-42-BWK" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-794" y="-417"/>
+            <point key="canvasLocation" x="-865" y="-337"/>
         </scene>
-        <!--Students-->
+        <!--Studenten-->
         <scene sceneID="6K9-Gf-d2f">
             <objects>
                 <viewController id="ZXB-O9-pbV" customClass="StudentViewController" customModule="Glaswerk" customModuleProvider="target" sceneMemberID="viewController">
@@ -165,11 +184,79 @@
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="fQg-sz-rm8"/>
                     </view>
-                    <tabBarItem key="tabBarItem" title="Students" image="student" id="CFv-EC-gfc"/>
+                    <tabBarItem key="tabBarItem" title="Studenten" image="student" id="CFv-EC-gfc"/>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="laq-SP-QNx" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-794" y="386"/>
+            <point key="canvasLocation" x="-865" y="401"/>
+        </scene>
+        <!--Schade-->
+        <scene sceneID="MDh-EC-cAh">
+            <objects>
+                <viewController id="iF9-q0-xXW" customClass="DamageLeerlingViewController" customModule="Glaswerk" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="mXS-L5-oUK">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="none" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="VXd-iE-H0b">
+                                <rect key="frame" x="0.0" y="88" width="414" height="725"/>
+                                <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                                <sections/>
+                            </tableView>
+                        </subviews>
+                        <color key="backgroundColor" name="BlueTint"/>
+                        <constraints>
+                            <constraint firstItem="VXd-iE-H0b" firstAttribute="top" secondItem="G1b-Uw-imw" secondAttribute="top" id="627-JH-Yzh"/>
+                            <constraint firstItem="G1b-Uw-imw" firstAttribute="bottom" secondItem="VXd-iE-H0b" secondAttribute="bottom" id="CGA-eo-6yr"/>
+                            <constraint firstItem="VXd-iE-H0b" firstAttribute="trailing" secondItem="G1b-Uw-imw" secondAttribute="trailing" id="HzX-x0-zni"/>
+                            <constraint firstItem="VXd-iE-H0b" firstAttribute="leading" secondItem="G1b-Uw-imw" secondAttribute="leading" id="hld-i1-1T7"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="G1b-Uw-imw"/>
+                    </view>
+                    <tabBarItem key="tabBarItem" title="Schade" image="damage" id="EaK-Fb-vEA"/>
+                    <navigationItem key="navigationItem" id="Vdn-XE-Nlg">
+                        <barButtonItem key="rightBarButtonItem" id="vAD-TR-AnX">
+                            <button key="customView" opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" id="P4u-e1-V2E">
+                                <rect key="frame" x="352" y="0.0" width="42" height="44"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <state key="normal" title="Klas:">
+                                    <color key="titleColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                </state>
+                                <connections>
+                                    <action selector="klasClick:" destination="iF9-q0-xXW" eventType="touchUpInside" id="ar9-id-apo"/>
+                                </connections>
+                            </button>
+                        </barButtonItem>
+                    </navigationItem>
+                    <connections>
+                        <outlet property="klasButton" destination="P4u-e1-V2E" id="nQ5-Cx-a0x"/>
+                        <outlet property="tableView" destination="VXd-iE-H0b" id="ww4-HH-RPe"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="nG0-YM-cxk" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="2413" y="-338"/>
+        </scene>
+        <!--Schade-->
+        <scene sceneID="Ehr-mY-glQ">
+            <objects>
+                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="V5i-3u-pQr" sceneMemberID="viewController">
+                    <tabBarItem key="tabBarItem" title="Schade" image="damage" id="acW-dT-cKf"/>
+                    <toolbarItems/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="kuL-dv-8UM">
+                        <rect key="frame" x="0.0" y="44" width="414" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                        <color key="barTintColor" name="BlueTint"/>
+                    </navigationBar>
+                    <nil name="viewControllers"/>
+                    <connections>
+                        <segue destination="9pv-A4-QxB" kind="relationship" relationship="rootViewController" id="tQ0-8m-aVI"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="elc-2z-qMZ" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="774" y="-337"/>
         </scene>
     </scenes>
     <resources>
@@ -177,8 +264,12 @@
         <image name="orders" width="16.5" height="16.5"/>
         <image name="stock" width="16.5" height="16.5"/>
         <image name="student" width="16.5" height="16.5"/>
+        <namedColor name="BlueTint">
+            <color red="0.32899999618530273" green="0.78100001811981201" blue="0.99000000953674316" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </namedColor>
         <namedColor name="LightBlueTint">
             <color red="0.92000001668930054" green="0.98000001907348633" blue="0.99699997901916504" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </namedColor>
     </resources>
+    <color key="tintColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
 </document>
