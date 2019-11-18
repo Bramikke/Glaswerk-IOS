@@ -59,7 +59,7 @@ extension OrderViewController: UITableViewDataSource, UITableViewDelegate {
         let alertController = UIAlertController(title: "Aantal besteld", message: nil, preferredStyle: .alert)
         let confirmAction = UIAlertAction(title: "Toevoegen", style: .default) { (_) in
             if let txtField = alertController.textFields?.first, let text = txtField.text {
-                self.itemRepository.addOrder(itemid: item.itemid, aantal: Int(text)!)
+                self.itemRepository.addOrder(itemid: item.itemid!, aantal: Int(text)!)
                 tableView.deselectRow(at: indexPath, animated: true)
             }
         }

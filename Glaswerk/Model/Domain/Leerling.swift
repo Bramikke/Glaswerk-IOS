@@ -13,7 +13,7 @@ struct LeerlingData: Codable {
 }
 
 struct Leerling: Codable {
-    let leerlingid: Int
+    let leerlingid: Int?
     let klasid: Int
     let voornaam: String
     let achternaam: String

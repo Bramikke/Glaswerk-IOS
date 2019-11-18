@@ -116,8 +116,6 @@ extension DamageViewController: UITableViewDataSource, UITableViewDelegate {
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let item = items[indexPath.row]
         let cell = tableView.dequeueReusableCell(withIdentifier: K.damage.cellIdentifier, for: indexPath) as! ItemCell
-        cell.layer.cornerRadius = 8
-        cell.layer.masksToBounds = true
         cell.titleLabel.text = item.naam
         cell.amountLabel.text = String(item.aantal)
         return cell
@@ -131,13 +129,13 @@ extension DamageViewController: UITableViewDataSource, UITableViewDelegate {
 
 //MARK: -
 extension DamageViewController: ItemRepositoryDelegate, LokaalRepositoryDelegate, KlasRepositoryDelegate {
-    func didUpdate(_ lokaalRepository: LokaalRepository, lokalen: [Lokaal]) {
-        self.lokalen = lokalen
+    func didUpdate(_ lokaalRepository: LokaalRepository, lokalen: [Lokaal]?) {
+        self.lokalen = lokalen!
         self.updateLokaal()
     }
     
-    func didUpdate(_ klasRepository: KlasRepository, klassen: [Klas]) {
-        self.klassen = klassen
+    func didUpdate(_ klasRepository: KlasRepository, klassen: [Klas]?) {
+        self.klassen = klassen!
         self.updateKlas()
     }
     

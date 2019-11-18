@@ -13,6 +13,6 @@ struct LokaalData: Codable {
 }
 
 struct Lokaal: Codable {
-    let lokaalid: Int
+    let lokaalid: Int?
     let naam: String
 }

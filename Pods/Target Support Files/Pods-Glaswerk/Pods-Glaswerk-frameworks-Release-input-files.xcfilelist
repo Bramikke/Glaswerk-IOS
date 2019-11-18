@@ -1,2 +1,5 @@
 ${PODS_ROOT}/Target Support Files/Pods-Glaswerk/Pods-Glaswerk-frameworks.sh
+${BUILT_PRODUCTS_DIR}/DropDown/DropDown.framework
+${BUILT_PRODUCTS_DIR}/IQKeyboardManagerSwift/IQKeyboardManagerSwift.framework
+${BUILT_PRODUCTS_DIR}/JJFloatingActionButton/JJFloatingActionButton.framework
 ${BUILT_PRODUCTS_DIR}/RestEssentials/RestEssentials.framework

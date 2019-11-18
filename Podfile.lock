@@ -1,16 +1,28 @@
 PODS:
+  - DropDown (2.3.13)
+  - IQKeyboardManagerSwift (6.5.4)
+  - JJFloatingActionButton (2.1.0)
   - RestEssentials (5.0.1)
 
 DEPENDENCIES:
+  - DropDown
+  - IQKeyboardManagerSwift
+  - JJFloatingActionButton
   - RestEssentials
 
 SPEC REPOS:
   trunk:
+    - DropDown
+    - IQKeyboardManagerSwift
+    - JJFloatingActionButton
     - RestEssentials
 
 SPEC CHECKSUMS:
+  DropDown: 8a2116376c1981888557f72ec2ffc9a5e0e456ec
+  IQKeyboardManagerSwift: 2dde0fc70110e8eac7ccce2a46fdbec6a850b414
+  JJFloatingActionButton: 26805f87c7e9f68c6a91bd9f3f09c2e6b904a84f
   RestEssentials: c1f734682b42f178040752e55111fd4f13f96624
 
-PODFILE CHECKSUM: 6e835daf7f96045301d113b2e92b76de5e070c2c
+PODFILE CHECKSUM: be9c268d1d673d95f19f5d4d6a734d616efaac1b
 
 COCOAPODS: 1.8.4

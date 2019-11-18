@@ -13,6 +13,6 @@ struct KlasData: Codable {
 }
 
 struct Klas: Codable {
-    let klasid: Int
+    let klasid: Int?
     let naam: String
 }

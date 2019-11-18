@@ -5,5 +5,7 @@ target 'Glaswerk' do
 
   # Pods for Glaswerk
     pod 'RestEssentials'
-
+    pod 'DropDown'
+    pod 'JJFloatingActionButton'
+    pod 'IQKeyboardManagerSwift'
 end

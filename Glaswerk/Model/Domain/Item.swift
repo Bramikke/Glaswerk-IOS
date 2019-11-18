@@ -13,7 +13,7 @@ struct ItemData: Codable {
 }
 
 struct Item: Codable {
-    let itemid: Int
+    let itemid: Int?
     let lokaal_id: Int
     let naam: String
     let aantal: Int

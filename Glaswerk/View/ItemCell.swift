@@ -13,6 +13,7 @@ class ItemCell: UITableViewCell {
     @IBOutlet weak var titleLabel: UILabel!
     @IBOutlet weak var amountLabel: UILabel!
     @IBOutlet weak var backgroundCell: UIView!
+    @IBOutlet weak var personImage: UIImageView!
     
     override func awakeFromNib() {
         super.awakeFromNib()

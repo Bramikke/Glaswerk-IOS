@@ -7,24 +7,187 @@
 //
 
 import UIKit
+import JJFloatingActionButton
 
 class StudentViewController: UIViewController {
 
-    override func viewDidLoad() {
-        super.viewDidLoad()
+    @IBOutlet weak var tableView: UITableView!
+    @IBOutlet weak var klasButton: UIButton!
+    
+    let defaults = UserDefaults.standard
+    var leerlingen : [Leerling] = []
+    var klassen: [Klas] = []
+    var indexPath: IndexPath?
 
-        // Do any additional setup after loading the view.
+    let klasRepository = KlasRepository()
+    let leerlingRepository = LeerlingRepository()
+    
+    override func viewDidAppear(_ animated: Bool) {
+        super.viewDidAppear(animated)
+        klasRepository.getKlassen()
+        updateLeerlingen()
     }
     
-
-    /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destination.
-        // Pass the selected object to the new view controller.
+    override func viewDidLoad() {
+        super.viewDidLoad()
+        addFAB()
+        defaults.register(defaults: [K.defaultKeys.klasid : 1, K.defaultKeys.lokaalid : 1])
+        klasRepository.delegate = self
+        leerlingRepository.delegate = self
+        
+        tableView.dataSource = self
+        tableView.delegate = self
+        tableView.register(UINib(nibName: K.damage.cellNibName, bundle: nil), forCellReuseIdentifier: K.damage.cellIdentifier)
     }
-    */
+    
+    func addFAB() {
+        let actionButton = JJFloatingActionButton()
+        actionButton.addItem(title: "Voeg leerling toe", image: UIImage(systemName: "person.fill")?.withRenderingMode(.alwaysTemplate)) { item in
+            self.indexPath = nil
+            self.performSegue(withIdentifier: K.leerling.cellToDetail, sender: self)
+        }
 
+        actionButton.addItem(title: "Voeg klas toe", image: UIImage(systemName: "person.3.fill")?.withRenderingMode(.alwaysTemplate)) { item in
+            let alertController = UIAlertController(title: "Voeg klas toe", message: nil, preferredStyle: .alert)
+            let confirmAction = UIAlertAction(title: "Toevoegen", style: .default) { _ in
+                if let txtField = alertController.textFields?.first, let text = txtField.text {
+                    self.klasRepository.addKlas(klas: Klas(klasid: nil, naam: text))
+                }
+            }
+            let cancelAction = UIAlertAction(title: "Annuleer", style: .cancel) { _ in }
+            alertController.addTextField { (textField) in
+                textField.placeholder = "Klas naam"
+            }
+            alertController.addAction(confirmAction)
+            alertController.addAction(cancelAction)
+            self.present(alertController, animated: true, completion: nil)
+        }
+        
+        actionButton.addItem(title: "Verwijder klas", image: UIImage(systemName: "trash.fill")?.withRenderingMode(.alwaysTemplate)) { item in
+            let alert = UIAlertController(title: "Verwijder klas", message: "\n\n\n\n\n\n\n\n\n", preferredStyle: .alert)
+            let pickerView = UIPickerView(frame: CGRect(x: 0, y: 50, width: 260, height: 162))
+            pickerView.backgroundColor = UIColor.lightGray.withAlphaComponent(0.2)
+            pickerView.dataSource = self
+            pickerView.delegate = self
+            alert.view.addSubview(pickerView)
+            let confirmAction = UIAlertAction(title: "Verwijder", style: .destructive) { _ in
+                self.klasRepository.removeKlas(klas: self.klassen[pickerView.selectedRow(inComponent: 0)])
+            }
+            let cancelAction = UIAlertAction(title: "Annuleer", style: .cancel) { _ in }
+            alert.addAction(confirmAction)
+            alert.addAction(cancelAction)
+            self.present(alert, animated: true) {
+                pickerView.frame.size.width = alert.view.frame.size.width
+            }
+        }
+
+        view.addSubview(actionButton)
+        actionButton.translatesAutoresizingMaskIntoConstraints = false
+        actionButton.buttonDiameter = 45
+        actionButton.buttonColor = UIColor(named: "BlueTint")!
+        actionButton.trailingAnchor.constraint(equalTo: view.safeAreaLayoutGuide.trailingAnchor, constant: -16).isActive = true
+        actionButton.bottomAnchor.constraint(equalTo: view.safeAreaLayoutGuide.bottomAnchor, constant: -16).isActive = true
+    }
+    
+    func updateKlas() {
+        let klasid = self.defaults.integer(forKey: K.defaultKeys.klasid)
+        DispatchQueue.main.async {
+            if let klas = self.klassen.first(where: {$0.klasid == klasid}) {
+                self.klasButton.setTitle(K.klas + klas.naam, for: .normal)
+                self.klasButton.sizeToFit()
+            }
+        }
+    }
+    
+    func updateLeerlingen() {
+        let klasid = defaults.integer(forKey: K.defaultKeys.klasid)
+        leerlingRepository.getLeerlingen(classId: klasid)
+    }
+    
+    @IBAction func klasClick(_ sender: UIButton) {
+        let alert = UIAlertController(title: "Selecteer klas", message: nil, preferredStyle: .actionSheet)
+        for klas in klassen {
+            alert.addAction(UIAlertAction(title: klas.naam, style: .default, handler: { _ in
+                self.defaults.set(klas.klasid, forKey: K.defaultKeys.klasid)
+                self.updateKlas()
+                self.updateLeerlingen()
+            }))
+        }
+        alert.addAction(UIAlertAction(title: "Annuleer", style: .cancel, handler: nil))
+        self.present(alert, animated: true, completion: nil)
+    }
+    
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        let vc = segue.destination as! StudentDetailViewController
+        if let ip = indexPath {
+            vc.leerling = leerlingen[ip.row]
+        }
+        vc.klassen = klassen
+    }
+       
+    override func viewDidDisappear(_ animated: Bool) {
+           super.viewDidAppear(animated)
+           if let indexPathSave = indexPath {
+               self.tableView.deselectRow(at: indexPathSave, animated: true)
+           }
+    }
+}
+
+//MARK: -
+extension StudentViewController: UITableViewDataSource, UITableViewDelegate {
+    func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+        return leerlingen.count
+    }
+    
+    func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+        let leerling = leerlingen[indexPath.row]
+        let cell = tableView.dequeueReusableCell(withIdentifier: K.damage.cellIdentifier, for: indexPath) as! ItemCell
+        cell.personImage.isHidden = false
+        cell.titleLabel.text = "\(leerling.voornaam) \(leerling.achternaam)"
+        cell.amountLabel.text = String(leerling.aantalGebroken!)
+        return cell
+    }
+    
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        self.indexPath = indexPath
+        self.performSegue(withIdentifier: K.leerling.cellToDetail, sender: self)
+    }
+}
+
+//MARK: -
+extension StudentViewController: LeerlingRepositoryDelegate, KlasRepositoryDelegate {
+    func didUpdate(_ leerlingRepository: LeerlingRepository, leerlingen: [Leerling]) {
+        DispatchQueue.main.async {
+            self.leerlingen = leerlingen
+            self.tableView.reloadData()
+        }
+    }
+    
+    func didUpdate(_ klasRepository: KlasRepository, klassen: [Klas]?) {
+        if let klassenSave = klassen {
+            self.klassen = klassenSave
+            self.updateKlas()
+        } else {
+            klasRepository.getKlassen()
+        }
+    }
+    
+    func didFailWithError(error: Error) {
+        print(error)
+    }
+}
+
+//MARK: -
+extension StudentViewController: UIPickerViewDataSource ,UIPickerViewDelegate {
+    func numberOfComponents(in pickerView: UIPickerView) -> Int {
+        return 1
+    }
+    
+    func pickerView(_ pickerView: UIPickerView, numberOfRowsInComponent component: Int) -> Int {
+        return klassen.count
+    }
+    
+    func pickerView(_ pickerView: UIPickerView, titleForRow row: Int, forComponent component: Int) -> String? {
+        return klassen[row].naam
+    }
 }

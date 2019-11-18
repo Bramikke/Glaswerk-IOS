@@ -10,15 +10,14 @@ import Foundation
 import RestEssentials
 
 protocol LokaalRepositoryDelegate {
-    func didUpdate(_ lokaalRepository: LokaalRepository, lokalen: [Lokaal])
+    func didUpdate(_ lokaalRepository: LokaalRepository, lokalen: [Lokaal]?)
     func didFailWithError(error: Error)
 }
 
 class LokaalRepository: GlaswerkManager {
     var delegate: LokaalRepositoryDelegate?
     
-    func getLokalen() {
-        let url = "\(URL)lokaal"
+    func restRequestGet(_ url: String) {
         guard let rest = RestController.make(urlString: url) else {
             self.delegate?.didFailWithError(error: BadURLError.runtimeError("Bad URL"))
             return
@@ -31,5 +30,30 @@ class LokaalRepository: GlaswerkManager {
                 self.delegate?.didFailWithError(error: error)
             }
         }
+    }
+    
+    func restRequestPost(_ url: String, lokaal: Lokaal) {
+         guard let rest = RestController.make(urlString: url) else {
+                   self.delegate?.didFailWithError(error: BadURLError.runtimeError("Bad URL"))
+                   return
+        }
+        rest.post(lokaal, at: "", responseType: HttpResponse.self){ result, httpResponse in
+            self.delegate?.didUpdate(self, lokalen: nil)
+        }
+    }
+    
+    func getLokalen() {
+        let url = "\(URL)lokaal"
+        restRequestGet(url)
+    }
+    
+    func addLokaal(lokaal: Lokaal) {
+        let url = "\(URL)addLokaal"
+        restRequestPost(url, lokaal: lokaal)
+    }
+    
+    func removeLokaal(lokaal: Lokaal) {
+        let url = "\(URL)deleteLokaal"
+        restRequestPost(url, lokaal: lokaal)
     }
 }

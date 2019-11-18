@@ -28,4 +28,12 @@ struct K {
         static let cellIdentifier = "orderCell"
         static let cellNibName = "OrderCell"
     }
+    
+    struct stock {
+        static let cellToDetail = "ItemToDetail"
+    }
+    
+    struct leerling {
+        static let cellToDetail = "StudentToDetail"
+    }
 }

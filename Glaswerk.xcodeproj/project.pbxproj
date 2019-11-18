@@ -22,6 +22,8 @@
 		CE4ADEB3237F3A90001B091B /* LeerlingItemRepository.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE4ADEB2237F3A90001B091B /* LeerlingItemRepository.swift */; };
 		CE4ADEB6237F4E4C001B091B /* OrderCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE4ADEB4237F4E4C001B091B /* OrderCell.swift */; };
 		CE4ADEB7237F4E4C001B091B /* OrderCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = CE4ADEB5237F4E4C001B091B /* OrderCell.xib */; };
+		CE4ADEBB238034C0001B091B /* StudentDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE4ADEBA238034C0001B091B /* StudentDetailViewController.swift */; };
+		CE4ADEBD23815AA8001B091B /* StockDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE4ADEBC23815AA8001B091B /* StockDetailViewController.swift */; };
 		CEB42B162378326800AA766F /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEB42B152378326800AA766F /* AppDelegate.swift */; };
 		CEB42B182378326800AA766F /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEB42B172378326800AA766F /* SceneDelegate.swift */; };
 		CEB42B1A2378326800AA766F /* DamageViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEB42B192378326800AA766F /* DamageViewController.swift */; };
@@ -55,6 +57,8 @@
 		CE4ADEB2237F3A90001B091B /* LeerlingItemRepository.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LeerlingItemRepository.swift; sourceTree = "<group>"; };
 		CE4ADEB4237F4E4C001B091B /* OrderCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OrderCell.swift; sourceTree = "<group>"; };
 		CE4ADEB5237F4E4C001B091B /* OrderCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = OrderCell.xib; sourceTree = "<group>"; };
+		CE4ADEBA238034C0001B091B /* StudentDetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StudentDetailViewController.swift; sourceTree = "<group>"; };
+		CE4ADEBC23815AA8001B091B /* StockDetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StockDetailViewController.swift; sourceTree = "<group>"; };
 		CEB42B122378326800AA766F /* Glaswerk.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Glaswerk.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		CEB42B152378326800AA766F /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		CEB42B172378326800AA766F /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -185,8 +189,10 @@
 				CEB42B192378326800AA766F /* DamageViewController.swift */,
 				CE4ADEAA237F21C3001B091B /* DamageLeerlingViewController.swift */,
 				CEB42B1B2378326800AA766F /* OrderViewController.swift */,
-				CEB42B2E2378381E00AA766F /* StudentViewController.swift */,
 				CEB42B302378383F00AA766F /* StockViewController.swift */,
+				CE4ADEBC23815AA8001B091B /* StockDetailViewController.swift */,
+				CEB42B2E2378381E00AA766F /* StudentViewController.swift */,
+				CE4ADEBA238034C0001B091B /* StudentDetailViewController.swift */,
 			);
 			path = Controller;
 			sourceTree = "<group>";
@@ -317,6 +323,7 @@
 				CE4ADEA1237EEA51001B091B /* Lokaal.swift in Sources */,
 				CEB42B1A2378326800AA766F /* DamageViewController.swift in Sources */,
 				CE4ADE9C237ED175001B091B /* ItemCell.swift in Sources */,
+				CE4ADEBB238034C0001B091B /* StudentDetailViewController.swift in Sources */,
 				CE4ADEB1237F3A31001B091B /* LeerlingItem.swift in Sources */,
 				CE4ADEA7237EED4B001B091B /* KlasRepository.swift in Sources */,
 				CE4ADE9F237EEA49001B091B /* Klas.swift in Sources */,
@@ -329,6 +336,7 @@
 				CEB42B4D237C819A00AA766F /* Constants.swift in Sources */,
 				CE4ADEA5237EED07001B091B /* LokaalRepository.swift in Sources */,
 				CE4ADEAD237F2DEF001B091B /* LeerlingRepository.swift in Sources */,
+				CE4ADEBD23815AA8001B091B /* StockDetailViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

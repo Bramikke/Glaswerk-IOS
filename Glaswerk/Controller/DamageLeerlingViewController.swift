@@ -49,7 +49,7 @@ class DamageLeerlingViewController: UIViewController {
     
     func updateLeerlingen() {
         let klasid = defaults.integer(forKey: K.defaultKeys.klasid)
-        leerlingRepository.getLeerlingen(classId: klasid, itemId: item!.itemid)
+        leerlingRepository.getLeerlingen(classId: klasid, itemId: item!.itemid!)
     }
 
     @IBAction func klasClick(_ sender: UIButton) {
@@ -75,9 +75,8 @@ extension DamageLeerlingViewController: UITableViewDataSource, UITableViewDelega
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let leerling = leerlingen[indexPath.row]
         let cell = tableView.dequeueReusableCell(withIdentifier: K.damage.cellIdentifier, for: indexPath) as! ItemCell
-        cell.layer.cornerRadius = 8
-        cell.layer.masksToBounds = true
-        cell.titleLabel.text = leerling.voornaam
+        cell.personImage.isHidden = false
+        cell.titleLabel.text = "\(leerling.voornaam) \(leerling.achternaam)"
         cell.amountLabel.text = String(leerling.aantalGebroken!)
         return cell
     }
@@ -90,13 +89,14 @@ extension DamageLeerlingViewController: UITableViewDataSource, UITableViewDelega
         alert.addAction(UIAlertAction(title: "Niet-opzettelijk", style: .default, handler: { (_) in
             self.alertDone(leerling: self.leerlingen[indexPath.row], opzettelijk: false)
         }))
+        alert.addAction(UIAlertAction(title: "Annuleer", style: .cancel, handler: { _ in }))
         self.present(alert, animated: true, completion: nil)
     }
     
     func alertDone(leerling: Leerling, opzettelijk: Bool) {
-        let leerlingItem = LeerlingItem(leerlingid: leerling.leerlingid, itemid: item!.itemid, opzettelijk: (opzettelijk) ? 1 : 0)
+        let leerlingItem = LeerlingItem(leerlingid: leerling.leerlingid!, itemid: item!.itemid!, opzettelijk: (opzettelijk) ? 1 : 0)
         leerlingItemRepository.addLeerlingItem(leerlingItem: leerlingItem)
-        itemRepository.reduceItem(itemid: item!.itemid)
+        itemRepository.reduceItem(itemid: item!.itemid!)
         navigationController?.popToRootViewController(animated: true)
     }
 }
@@ -107,8 +107,8 @@ extension DamageLeerlingViewController: LeerlingRepositoryDelegate, KlasReposito
         print("updated item")
     }
     
-    func didUpdate(_ klasRepository: KlasRepository, klassen: [Klas]) {
-        self.klassen = klassen
+    func didUpdate(_ klasRepository: KlasRepository, klassen: [Klas]?) {
+        self.klassen = klassen!
         self.updateKlas()
     }
     
