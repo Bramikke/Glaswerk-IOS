@@ -14,9 +14,13 @@ import IQKeyboardManagerSwift
 class AppDelegate: UIResponder, UIApplicationDelegate {
 
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?) -> Bool {
+        //automatic hiding keyboard
         IQKeyboardManager.shared.enable = true
         IQKeyboardManager.shared.enableAutoToolbar = false
         IQKeyboardManager.shared.shouldResignOnTouchOutside = true
+        
+        //register default defaults
+        UserDefaults.standard.register(defaults: [K.defaultKeys.klasid : 1, K.defaultKeys.lokaalid : 1])
         return true
     }
 

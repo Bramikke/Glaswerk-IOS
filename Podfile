@@ -8,4 +8,5 @@ target 'Glaswerk' do
     pod 'DropDown'
     pod 'JJFloatingActionButton'
     pod 'IQKeyboardManagerSwift'
+    pod 'Toast-Swift'
 end

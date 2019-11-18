@@ -33,9 +33,9 @@ class LeerlingRepository: GlaswerkManager {
     }
     
     func restRequestPost(url: String, leerling: Leerling) {
-         guard let rest = RestController.make(urlString: url) else {
-                   self.delegate?.didFailWithError(error: BadURLError.runtimeError("Bad URL"))
-                   return
+        guard let rest = RestController.make(urlString: url) else {
+            self.delegate?.didFailWithError(error: BadURLError.runtimeError("Bad URL"))
+            return
         }
         rest.post(leerling, at: "", responseType: HttpResponse.self){ result, httpResponse in }
     }

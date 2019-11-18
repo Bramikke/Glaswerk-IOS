@@ -9,9 +9,10 @@
 import UIKit
 import DropDown
 import IQKeyboardManagerSwift
+import Toast_Swift
 
 class StudentDetailViewController: UIViewController {
-
+    
     @IBOutlet weak var voornaamInput: UITextField!
     @IBOutlet weak var achternaamInput: UITextField!
     @IBOutlet weak var klasInput: UITextField!
@@ -37,7 +38,7 @@ class StudentDetailViewController: UIViewController {
             klasid = klassen!.first(where: { $0.klasid == l.klasid })?.klasid
         } else {
             verwijderButton.isHidden = true
-            saveButton.setTitle("Toevoegen", for: .normal)
+            saveButton.setTitle(K.add, for: .normal)
         }
         dropDown.anchorView = klasInput
         dropDown.dataSource = klassen!.map({ $0.naam })
@@ -53,9 +54,9 @@ class StudentDetailViewController: UIViewController {
     }
     
     @IBAction func removeButtonClick(_ sender: UIButton) {
-        let alert = UIAlertController(title: "Verwijderen?", message: "Weet je zeker dat je \(leerling!.voornaam) \(leerling!.achternaam) wilt verwijderen?", preferredStyle: .alert)
-        alert.addAction(UIAlertAction(title: "Annuleer", style: .default, handler: { _ in }))
-        alert.addAction(UIAlertAction(title: "Verwijder", style: .destructive, handler: { _ in
+        let alert = UIAlertController(title: K.detailView.remove, message: "\(K.detailView.areUSureThat)\(leerling!.voornaam) \(leerling!.achternaam)\(K.detailView.wantToRemove)", preferredStyle: .alert)
+        alert.addAction(UIAlertAction(title: K.cancel, style: .default, handler: { _ in }))
+        alert.addAction(UIAlertAction(title: K.remove, style: .destructive, handler: { _ in
             self.leerlingRepository.removeLeerling(leerling: self.leerling!)
             self.navigationController?.popViewController(animated: true)
         }))
@@ -63,21 +64,23 @@ class StudentDetailViewController: UIViewController {
     }
     
     @IBAction func saveButtonClick(_ sender: UIButton) {
-        if let l = leerling {
-            leerlingRepository.editLeerling(
-                leerling: Leerling(leerlingid: l.leerlingid,
-                                   klasid: klasid!,
-                                   voornaam: voornaamInput.text!,
-                                   achternaam: achternaamInput.text!,
-                                   aantalGebroken: nil))
+        if klasid != nil, voornaamInput.text != "", achternaamInput.text != "" {
+            if let l = leerling {
+                leerlingRepository.editLeerling(leerling: Leerling(leerlingid: l.leerlingid,
+                                                                   klasid: klasid!,
+                                                                   voornaam: voornaamInput.text!,
+                                                                   achternaam: achternaamInput.text!,
+                                                                   aantalGebroken: nil))
+            } else {
+                leerlingRepository.addLeerling(leerling: Leerling(leerlingid: nil,
+                                                                  klasid: klasid!,
+                                                                  voornaam: voornaamInput.text!,
+                                                                  achternaam: achternaamInput.text!,
+                                                                  aantalGebroken: nil))
+            }
+            navigationController?.popViewController(animated: true)
         } else {
-            leerlingRepository.addLeerling(leerling:
-                Leerling(leerlingid: nil,
-                         klasid: self.klasid!,
-                         voornaam: voornaamInput.text!,
-                         achternaam: achternaamInput.text!,
-                         aantalGebroken: nil))
+            view.makeToast(K.error.fields)
         }
-        navigationController?.popViewController(animated: true)
     }
 }

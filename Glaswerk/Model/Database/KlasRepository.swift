@@ -33,9 +33,9 @@ class KlasRepository: GlaswerkManager {
     }
     
     func restRequestPost(_ url: String, klas: Klas) {
-         guard let rest = RestController.make(urlString: url) else {
-                   self.delegate?.didFailWithError(error: BadURLError.runtimeError("Bad URL"))
-                   return
+        guard let rest = RestController.make(urlString: url) else {
+            self.delegate?.didFailWithError(error: BadURLError.runtimeError("Bad URL"))
+            return
         }
         rest.post(klas, at: "", responseType: HttpResponse.self){ result, httpResponse in
             self.delegate?.didUpdate(self, klassen: nil)

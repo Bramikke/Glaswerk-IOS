@@ -9,11 +9,11 @@
 import UIKit
 
 class DamageViewController: UIViewController {
-
+    
     @IBOutlet weak var tableView: UITableView!
     @IBOutlet weak var lokaalButton: UIButton!
     @IBOutlet weak var klasButton: UIButton!
-
+    
     let defaults = UserDefaults.standard
     
     var items : [Item] = []
@@ -25,6 +25,7 @@ class DamageViewController: UIViewController {
     let klasRepository = KlasRepository()
     let itemRepository = ItemRepository()
     
+    //every time view appear, reload displayed data
     override func viewDidAppear(_ animated: Bool) {
         super.viewDidAppear(animated)
         lokaalRepository.getLokalen()
@@ -34,16 +35,15 @@ class DamageViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        defaults.register(defaults: [K.defaultKeys.klasid : 1, K.defaultKeys.lokaalid : 1])
         lokaalRepository.delegate = self
         klasRepository.delegate = self
         itemRepository.delegate = self
-        
         tableView.dataSource = self
         tableView.delegate = self
-        tableView.register(UINib(nibName: K.damage.cellNibName, bundle: nil), forCellReuseIdentifier: K.damage.cellIdentifier)
+        tableView.register(UINib(nibName: K.cellNibName, bundle: nil), forCellReuseIdentifier: K.cellIdentifier)
     }
     
+    //get current lokaal from defaults
     func updateLokaal() {
         let lokaalid = self.defaults.integer(forKey: K.defaultKeys.lokaalid)
         DispatchQueue.main.async {
@@ -54,6 +54,7 @@ class DamageViewController: UIViewController {
         }
     }
     
+    //get current klas from defaults
     func updateKlas() {
         let klasid = self.defaults.integer(forKey: K.defaultKeys.klasid)
         DispatchQueue.main.async {
@@ -64,13 +65,16 @@ class DamageViewController: UIViewController {
         }
     }
     
+    //get items from database
     func updateItems() {
         let lokaalid = defaults.integer(forKey: K.defaultKeys.lokaalid)
         itemRepository.getItems(roomId: lokaalid)
     }
     
+    //show popup when clicking on lokaal button,
+    //update lokaal and items on new lokaal select
     @IBAction func lokaalClick(_ sender: UIButton) {
-        let alert = UIAlertController(title: "Selecteer lokaal", message: nil, preferredStyle: .actionSheet)
+        let alert = UIAlertController(title: K.selectLokaal, message: nil, preferredStyle: .actionSheet)
         for lokaal in lokalen {
             alert.addAction(UIAlertAction(title: lokaal.naam, style: .default, handler: { _ in
                 self.defaults.set(lokaal.lokaalid, forKey: K.defaultKeys.lokaalid)
@@ -78,27 +82,30 @@ class DamageViewController: UIViewController {
                 self.updateItems()
             }))
         }
-        alert.addAction(UIAlertAction(title: "Annuleer", style: .cancel, handler: nil))
+        alert.addAction(UIAlertAction(title: K.cancel, style: .cancel, handler: nil))
         self.present(alert, animated: true, completion: nil)
     }
     
+    //show popup when clicking on klas button
     @IBAction func klasClick(_ sender: UIButton) {
-        let alert = UIAlertController(title: "Selecteer klas", message: nil, preferredStyle: .actionSheet)
+        let alert = UIAlertController(title: K.selectKlas, message: nil, preferredStyle: .actionSheet)
         for klas in klassen {
             alert.addAction(UIAlertAction(title: klas.naam, style: .default, handler: { _ in
                 self.defaults.set(klas.klasid, forKey: K.defaultKeys.klasid)
                 self.updateKlas()
             }))
         }
-        alert.addAction(UIAlertAction(title: "Annuleer", style: .cancel, handler: nil))
+        alert.addAction(UIAlertAction(title: K.cancel, style: .cancel, handler: nil))
         self.present(alert, animated: true, completion: nil)
     }
     
+    //prepare for segue to next ViewController -> pass selected item
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         let vc = segue.destination as! DamageLeerlingViewController
         vc.item = items[indexPath!.row]
     }
     
+    //deselect row from tableview
     override func viewDidDisappear(_ animated: Bool) {
         super.viewDidAppear(animated)
         if let indexPathSave = indexPath {
@@ -107,7 +114,8 @@ class DamageViewController: UIViewController {
     }
 }
 
-//MARK: -
+//MARK: - TableView
+// fill table, perform segue on click
 extension DamageViewController: UITableViewDataSource, UITableViewDelegate {
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         return items.count
@@ -115,7 +123,7 @@ extension DamageViewController: UITableViewDataSource, UITableViewDelegate {
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let item = items[indexPath.row]
-        let cell = tableView.dequeueReusableCell(withIdentifier: K.damage.cellIdentifier, for: indexPath) as! ItemCell
+        let cell = tableView.dequeueReusableCell(withIdentifier: K.cellIdentifier, for: indexPath) as! ItemCell
         cell.titleLabel.text = item.naam
         cell.amountLabel.text = String(item.aantal)
         return cell
@@ -127,7 +135,8 @@ extension DamageViewController: UITableViewDataSource, UITableViewDelegate {
     }
 }
 
-//MARK: -
+//MARK: - Repositories
+//update view when received new data from database
 extension DamageViewController: ItemRepositoryDelegate, LokaalRepositoryDelegate, KlasRepositoryDelegate {
     func didUpdate(_ lokaalRepository: LokaalRepository, lokalen: [Lokaal]?) {
         self.lokalen = lokalen!

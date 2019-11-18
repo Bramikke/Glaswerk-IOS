@@ -9,31 +9,31 @@
 import UIKit
 
 class DamageLeerlingViewController: UIViewController {
-
     @IBOutlet weak var tableView: UITableView!
     @IBOutlet weak var klasButton: UIButton!
     
     let defaults = UserDefaults.standard
+    
     let klasRepository = KlasRepository()
     let leerlingRepository = LeerlingRepository()
     let leerlingItemRepository = LeerlingItemRepository()
     let itemRepository = ItemRepository()
+    
     var item: Item?
     var klassen: [Klas] = []
     var leerlingen: [Leerling] = []
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        defaults.register(defaults: [K.defaultKeys.klasid : 1, K.defaultKeys.lokaalid : 1])
         klasRepository.delegate = self
         leerlingRepository.delegate = self
         leerlingItemRepository.delegate = self
         itemRepository.delegate = self
-        klasRepository.getKlassen()
-        updateLeerlingen()
         tableView.dataSource = self
         tableView.delegate = self
-        tableView.register(UINib(nibName: K.damage.cellNibName, bundle: nil), forCellReuseIdentifier: K.damage.cellIdentifier)
+        klasRepository.getKlassen()
+        updateLeerlingen()
+        tableView.register(UINib(nibName: K.cellNibName, bundle: nil), forCellReuseIdentifier: K.cellIdentifier)
     }
     
     func updateKlas() {
@@ -51,9 +51,9 @@ class DamageLeerlingViewController: UIViewController {
         let klasid = defaults.integer(forKey: K.defaultKeys.klasid)
         leerlingRepository.getLeerlingen(classId: klasid, itemId: item!.itemid!)
     }
-
+    
     @IBAction func klasClick(_ sender: UIButton) {
-        let alert = UIAlertController(title: "Selecteer klas", message: nil, preferredStyle: .actionSheet)
+        let alert = UIAlertController(title: K.selectKlas, message: nil, preferredStyle: .actionSheet)
         for klas in klassen {
             alert.addAction(UIAlertAction(title: klas.naam, style: .default, handler: { _ in
                 self.defaults.set(klas.klasid, forKey: K.defaultKeys.klasid)
@@ -61,7 +61,7 @@ class DamageLeerlingViewController: UIViewController {
                 self.updateLeerlingen()
             }))
         }
-        alert.addAction(UIAlertAction(title: "Annuleer", style: .cancel, handler: nil))
+        alert.addAction(UIAlertAction(title: K.cancel, style: .cancel, handler: nil))
         self.present(alert, animated: true, completion: nil)
     }
 }
@@ -74,7 +74,7 @@ extension DamageLeerlingViewController: UITableViewDataSource, UITableViewDelega
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let leerling = leerlingen[indexPath.row]
-        let cell = tableView.dequeueReusableCell(withIdentifier: K.damage.cellIdentifier, for: indexPath) as! ItemCell
+        let cell = tableView.dequeueReusableCell(withIdentifier: K.cellIdentifier, for: indexPath) as! ItemCell
         cell.personImage.isHidden = false
         cell.titleLabel.text = "\(leerling.voornaam) \(leerling.achternaam)"
         cell.amountLabel.text = String(leerling.aantalGebroken!)
@@ -82,14 +82,14 @@ extension DamageLeerlingViewController: UITableViewDataSource, UITableViewDelega
     }
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-        let alert = UIAlertController(title: "Reden", message: nil, preferredStyle: .alert)
-        alert.addAction(UIAlertAction(title: "Opzettelijk", style: .default, handler: { (_) in
+        let alert = UIAlertController(title: K.damage.reason, message: nil, preferredStyle: .alert)
+        alert.addAction(UIAlertAction(title: K.damage.onPurpose, style: .default, handler: { (_) in
             self.alertDone(leerling: self.leerlingen[indexPath.row], opzettelijk: true)
         }))
-        alert.addAction(UIAlertAction(title: "Niet-opzettelijk", style: .default, handler: { (_) in
+        alert.addAction(UIAlertAction(title: K.damage.notOnPurpose, style: .default, handler: { (_) in
             self.alertDone(leerling: self.leerlingen[indexPath.row], opzettelijk: false)
         }))
-        alert.addAction(UIAlertAction(title: "Annuleer", style: .cancel, handler: { _ in }))
+        alert.addAction(UIAlertAction(title: K.cancel, style: .cancel, handler: { _ in }))
         self.present(alert, animated: true, completion: nil)
     }
     
@@ -103,9 +103,7 @@ extension DamageLeerlingViewController: UITableViewDataSource, UITableViewDelega
 
 //MARK: -
 extension DamageLeerlingViewController: LeerlingRepositoryDelegate, KlasRepositoryDelegate, LeerlingItemRepositoryDelegate, ItemRepositoryDelegate {
-    func didUpdate(_ itemRepository: ItemRepository, items: [Item]?) {
-        print("updated item")
-    }
+    func didUpdate(_ itemRepository: ItemRepository, items: [Item]?) {}
     
     func didUpdate(_ klasRepository: KlasRepository, klassen: [Klas]?) {
         self.klassen = klassen!
@@ -119,9 +117,7 @@ extension DamageLeerlingViewController: LeerlingRepositoryDelegate, KlasReposito
         }
     }
     
-    func didUpdate(_ leerlingItemRepository: LeerlingItemRepository) {
-        print("updated leerlingItem")
-    }
+    func didUpdate(_ leerlingItemRepository: LeerlingItemRepository) {}
     
     func didFailWithError(error: Error) {
         print(error)

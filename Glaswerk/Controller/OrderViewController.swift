@@ -29,11 +29,11 @@ class OrderViewController: UIViewController {
         tableView.delegate = self
         tableView.register(UINib(nibName: K.order.cellNibName, bundle: nil), forCellReuseIdentifier: K.order.cellIdentifier)
     }
-
+    
     func updateItems() {
         itemRepository.getItemOrders()
     }
-
+    
 }
 
 extension OrderViewController: UITableViewDataSource, UITableViewDelegate {
@@ -56,19 +56,19 @@ extension OrderViewController: UITableViewDataSource, UITableViewDelegate {
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         let item = items[indexPath.row]
-        let alertController = UIAlertController(title: "Aantal besteld", message: nil, preferredStyle: .alert)
-        let confirmAction = UIAlertAction(title: "Toevoegen", style: .default) { (_) in
+        let alertController = UIAlertController(title: K.order.orderAmount, message: nil, preferredStyle: .alert)
+        let confirmAction = UIAlertAction(title: K.add, style: .default) { (_) in
             if let txtField = alertController.textFields?.first, let text = txtField.text {
                 self.itemRepository.addOrder(itemid: item.itemid!, aantal: Int(text)!)
                 tableView.deselectRow(at: indexPath, animated: true)
             }
         }
-        let cancelAction = UIAlertAction(title: "Annuleer", style: .cancel) { (_) in
+        let cancelAction = UIAlertAction(title: K.cancel, style: .cancel) { (_) in
             tableView.deselectRow(at: indexPath, animated: true)
         }
         alertController.addTextField { (textField) in
             textField.keyboardType = .numberPad
-            textField.placeholder = "Aantal"
+            textField.placeholder = K.order.amount
             textField.text = String((item.max_aantal - item.aantal) / item.bestel_hoeveelheid * item.bestel_hoeveelheid)
         }
         alertController.addAction(confirmAction)
@@ -89,11 +89,5 @@ extension OrderViewController: ItemRepositoryDelegate {
     
     func didFailWithError(error: Error) {
         print(error)
-    }
-}
-
-extension UIAlertController {
-    func addNumberField() {
-        
     }
 }

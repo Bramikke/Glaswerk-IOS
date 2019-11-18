@@ -9,7 +9,7 @@
 import UIKit
 
 class ItemCell: UITableViewCell {
-
+    
     @IBOutlet weak var titleLabel: UILabel!
     @IBOutlet weak var amountLabel: UILabel!
     @IBOutlet weak var backgroundCell: UIView!
@@ -23,7 +23,7 @@ class ItemCell: UITableViewCell {
         backgroundCell.layer.shadowOffset = CGSize(width: 0, height: 0)
         backgroundCell.layer.shadowOpacity = 0.8
     }
-
+    
     override func setSelected(_ selected: Bool, animated: Bool) {
         if(selected) {
             backgroundCell.backgroundColor = UIColor.opaqueSeparator

@@ -42,7 +42,7 @@ class StockDetailViewController: UIViewController {
             lokaalid = lokalen!.first(where: {$0.lokaalid == i.lokaal_id})?.lokaalid
         } else {
             verwijderButton.isHidden = true
-            saveButton.setTitle("Toevoegen", for: .normal)
+            saveButton.setTitle(K.add, for: .normal)
         }
         dropDown.anchorView = lokaalInput
         dropDown.dataSource = lokalen!.map({ $0.naam })
@@ -58,9 +58,9 @@ class StockDetailViewController: UIViewController {
     }
     
     @IBAction func verwijderButtonClick(_ sender: UIButton) {
-        let alert = UIAlertController(title: "Verwijderen?", message: "Weet je zeker dat je \(item!.naam) wilt verwijderen?", preferredStyle: .alert)
-        alert.addAction(UIAlertAction(title: "Annuleer", style: .default, handler: { _ in }))
-        alert.addAction(UIAlertAction(title: "Verwijder", style: .destructive, handler: { _ in
+        let alert = UIAlertController(title: K.detailView.remove, message: K.detailView.areUSureThat+item!.naam+K.detailView.wantToRemove, preferredStyle: .alert)
+        alert.addAction(UIAlertAction(title: K.cancel, style: .default, handler: { _ in }))
+        alert.addAction(UIAlertAction(title: K.remove, style: .destructive, handler: { _ in
             self.itemRepository.removeItem(item: self.item!)
             self.navigationController?.popViewController(animated: true)
         }))
@@ -68,27 +68,31 @@ class StockDetailViewController: UIViewController {
     }
     
     @IBAction func saveButtonClick(_ sender: UIButton) {
-        if let i = item {
-            itemRepository.editItem(
-                item: Item(itemid: i.itemid,
-                           lokaal_id: lokaalid!,
-                           naam: naamInput.text!,
-                           aantal: Int(aantalInput.text!)!,
-                           min_aantal: Int(minAantalInput.text!)!,
-                           max_aantal: Int(maxAantalInput.text!)!,
-                           bestel_hoeveelheid: Int(bestelHoeveelheidInput.text!)!,
-                           lokaalid: nil, lokaal_naam: nil))
+        if lokaalid != nil, naamInput.text != "", aantalInput.text != "", minAantalInput.text != "", maxAantalInput.text != "", bestelHoeveelheidInput.text != "" {
+            if let i = item {
+                itemRepository.editItem(
+                    item: Item(itemid: i.itemid,
+                               lokaal_id: lokaalid!,
+                               naam: naamInput.text!,
+                               aantal: Int(aantalInput.text!)!,
+                               min_aantal: Int(minAantalInput.text!)!,
+                               max_aantal: Int(maxAantalInput.text!)!,
+                               bestel_hoeveelheid: Int(bestelHoeveelheidInput.text!)!,
+                               lokaalid: nil, lokaal_naam: nil))
+            } else {
+                itemRepository.addItem(
+                    item: Item(itemid: nil,
+                               lokaal_id: lokaalid!,
+                               naam: naamInput.text!,
+                               aantal: Int(aantalInput.text!)!,
+                               min_aantal: Int(minAantalInput.text!)!,
+                               max_aantal: Int(maxAantalInput.text!)!,
+                               bestel_hoeveelheid: Int(bestelHoeveelheidInput.text!)!,
+                               lokaalid: nil, lokaal_naam: nil))
+            }
+            navigationController?.popViewController(animated: true)
         } else {
-            itemRepository.addItem(
-                item: Item(itemid: nil,
-                           lokaal_id: lokaalid!,
-                           naam: naamInput.text!,
-                           aantal: Int(aantalInput.text!)!,
-                           min_aantal: Int(minAantalInput.text!)!,
-                           max_aantal: Int(maxAantalInput.text!)!,
-                           bestel_hoeveelheid: Int(bestelHoeveelheidInput.text!)!,
-                           lokaalid: nil, lokaal_naam: nil))
+            view.makeToast(K.error.fields)
         }
-        navigationController?.popViewController(animated: true)
     }
 }
