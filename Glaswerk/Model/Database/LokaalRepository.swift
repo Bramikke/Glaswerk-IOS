@@ -25,7 +25,7 @@ class LokaalRepository: GlaswerkManager {
         rest.get(LokaalData.self) { result, httpResponse in
             do {
                 let response = try result.value()
-                self.delegate?.didUpdate(self, lokalen: response.rooms)
+                self.delegate?.didUpdate(self, lokalen: response.rooms.sorted(by: {$0.naam < $1.naam}))
             } catch {
                 self.delegate?.didFailWithError(error: error)
             }

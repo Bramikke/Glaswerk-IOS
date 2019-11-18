@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import Toast_Swift
 
 class OrderViewController: UIViewController {
     
@@ -59,7 +60,11 @@ extension OrderViewController: UITableViewDataSource, UITableViewDelegate {
         let alertController = UIAlertController(title: K.order.orderAmount, message: nil, preferredStyle: .alert)
         let confirmAction = UIAlertAction(title: K.add, style: .default) { (_) in
             if let txtField = alertController.textFields?.first, let text = txtField.text {
-                self.itemRepository.addOrder(itemid: item.itemid!, aantal: Int(text)!)
+                if text != "" {
+                    self.itemRepository.addOrder(itemid: item.itemid!, aantal: Int(text)!)
+                } else {
+                    self.view.makeToast(K.error.fields)
+                }
                 tableView.deselectRow(at: indexPath, animated: true)
             }
         }

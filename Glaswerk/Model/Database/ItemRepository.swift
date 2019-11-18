@@ -25,7 +25,7 @@ class ItemRepository: GlaswerkManager {
         rest.get(ItemData.self) { result, httpResponse in
             do {
                 let response = try result.value()
-                self.delegate?.didUpdate(self, items: response.items)
+                self.delegate?.didUpdate(self, items: response.items.sorted(by: { $0.naam < $1.naam }))
             } catch {
                 self.delegate?.didFailWithError(error: error)
             }

@@ -25,7 +25,7 @@ class KlasRepository: GlaswerkManager {
         rest.get(KlasData.self) { result, httpResponse in
             do {
                 let response = try result.value()
-                self.delegate?.didUpdate(self, klassen: response.classes)
+                self.delegate?.didUpdate(self, klassen: response.classes.sorted(by: {$0.naam < $1.naam}))
             } catch {
                 self.delegate?.didFailWithError(error: error)
             }

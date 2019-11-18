@@ -25,7 +25,7 @@ class LeerlingRepository: GlaswerkManager {
         rest.get(LeerlingData.self) { result, httpResponse in
             do {
                 let response = try result.value()
-                self.delegate?.didUpdate(self, leerlingen: response.students)
+                self.delegate?.didUpdate(self, leerlingen: response.students.sorted(by: {$0.voornaam < $1.voornaam}))
             } catch {
                 self.delegate?.didFailWithError(error: error)
             }
