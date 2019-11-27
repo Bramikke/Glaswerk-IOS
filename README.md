@@ -4,9 +4,9 @@ Dit is mijn (**Bram Goedvriend**) IOS applicatie.
 
 ## Overview
 
-Deze applicatie is geschreven voor een chemie leerkracht. <br>
-In deze applicatie is het de bedoeling dat de chemie leerkracht de gebroken objecten uit het chemie lokaal kan invoeren in de applicatie. <br>
-Hierdoor kan de leerkracht bij houden welke items gebroken zijn, door welke leerling en wanneer er nieuwe bestellingen moeten geplaatst worden.
+Deze applicatie is geschreven voor een chemieleerkracht. <br>
+In deze applicatie is het de bedoeling dat de chemieleerkracht de gebroken objecten uit het chemielokaal kan invoeren in de applicatie. <br>
+Hierdoor kan de leerkracht bijhouden welke items gebroken zijn, door welke leerling en wanneer er nieuwe bestellingen moeten geplaatst worden.
 
 ## Getting started
 
