@@ -9,7 +9,7 @@
 import Foundation
 
 class GlaswerkManager {
-    let URL = "http://ec2-35-180-181-246.eu-west-3.compute.amazonaws.com:8080/"
+    let URL = "http://bramlab.ga:4444/"
 }
 
 enum BadURLError: Error {
