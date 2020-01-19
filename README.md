@@ -24,5 +24,5 @@ Gelieve dit te melden.
 
 # Extra
 
-Voor extra informatie ga naar: [www.bramgoedvriend.ga](http://bramgoedvriend.ga/). <br>
+Voor extra informatie ga naar: [www.bramgoedvriend.be](http://bramgoedvriend.be/). <br>
 Ik ben te vinden op [Facebook](https://www.facebook.com/braampje.goedvriend) en [LinkedIn](https://www.linkedin.com/in/bramgoedvriend/).
